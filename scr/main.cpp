@@ -2,20 +2,24 @@
 #include "fib.h"
 #include "fat.h"
 
-#define FIB 40
-#define FAT 20
+int main (int argc, char *argv[]) {
+  if (std::string(argv[1]) == "-fib") {
+    if (std::string(argv[2]) == "-r") {
+      std::cout << "Fib Recursivo: " << fibonacciRecursivo(atoi(argv[3])) << '\n';
+    }
+    if (std::string(argv[2]) == "-i") {
+      std::cout << "Fib Iterativo: " << fibonacciIterativo(atoi(argv[3])) << '\n';
+    }
+  }
 
-int main (int argc, char **argv) {
-  // TODO: implementar argc e argv para controlar chamada via makefile
-  for (int i = 1; i <= 20; i++){
-    std::cout << "Fib Recursivo: " << fibonacciRecursivo(i) << '\n'  
-              << "Fib Iterativo: " << fibonacciIterativo(i) << '\n';
+  if (std::string(argv[1]) == "-fat") {
+    if (std::string(argv[2]) == "-r") {
+      std::cout << "Fat Recursivo: " << fatorialRecursivo(atoi(argv[3])) << '\n';
+    }
+    if (std::string(argv[1]) == "-i") {
+      std::cout << "Fat Iterativo: " << fatorialIterativo(atoi(argv[3])) << '\n';
+    }
   }
-  
-  for (int i = 1; i <=20; i++) {
-    std::cout << "Fat Recursivo: " << fatorialRecursivo(i) << '\n' 
-              << "Fat Iterativo: " << fatorialIterativo(i) << '\n';
-  }
-  
+  std::cout << "Fim do programa" << '\n'; 
   return 0;
 }

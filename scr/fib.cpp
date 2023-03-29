@@ -1,6 +1,8 @@
 #include "fib.h"
+#include <iostream>
 
 long long int fibonacciRecursivo(long long int n) {
+  std::cout << "Camada" << n << '\n';
   if (n == 1 || n == 0) {
     return n;
   } else {
@@ -9,6 +11,7 @@ long long int fibonacciRecursivo(long long int n) {
 }
 
 long long int fibonacciIterativo(long long int n) {
+  std::cout << "Camada" << n << '\n';
   long long int fib[n];
     fib[0] = 0;
     fib[1] = 1;
