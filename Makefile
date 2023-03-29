@@ -8,8 +8,8 @@ OBJECTS := $(patsubst %.cpp, %.o, $(SOURCES))
 PROJECT_NAME := teste
 EXE := bin/$(PROJECT_NAME)
 
-FIB := 5000000 # MAX 43/5000000
-FAT := 30 # MAX 65
+FIB := 1200000 # MAX 43/5000000
+FAT := 70 # MAX 65
 
 $(EXE): $(OBJECTS)
 	$(CXX) -o bin/$(PROJECT_NAME) $(OBJECTS)
