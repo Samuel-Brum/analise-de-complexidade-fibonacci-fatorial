@@ -16,10 +16,9 @@ int main (int argc, char *argv[]) {
     if (std::string(argv[2]) == "r") {
       std::cout << "Fat Recursivo: " << fatorialRecursivo(atoi(argv[3])) << '\n' << std::endl;
     }
-    if (std::string(argv[1]) == "i") {
+    if (std::string(argv[2]) == "i") {
       std::cout << "Fat Iterativo: " << fatorialIterativo(atoi(argv[3])) << '\n' << std::endl;
     }
   }
-  std::cout << "Fim do programa" << '\n'; 
   return 0;
 }

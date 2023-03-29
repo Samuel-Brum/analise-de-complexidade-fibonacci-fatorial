@@ -1,5 +1,4 @@
 #include "fib.h"
-#include <iostream>
 
 unsigned long long int fibonacciRecursivo(unsigned long long int n) {
   if (n == 1 || n == 0) {
