@@ -5,12 +5,12 @@ HEADERS := $(wildcard include/*.h)
 SOURCES := $(wildcard scr/*.cpp)
 OBJECTS := $(patsubst %.cpp, %.o, $(SOURCES))
 
-PROJECT_NAME := teste
+FILE_NAME := teste
 
-$(PROJECT_NAME): $(OBJECTS)
-	$(CXX) -o bin/$@ $(OBJECTS)
+$FILE_NAME: $(OBJECTS)
+	$(CXX) -o bin/teste $(OBJECTS)
 
-%.o: %.cpp $(HEADERS)
+obj/%.o: scr/%.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 clean:
