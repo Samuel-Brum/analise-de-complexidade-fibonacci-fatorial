@@ -1,6 +1,6 @@
 #include "fib.h"
 
-int fibonacciRecursivo(int n) {
+long long int fibonacciRecursivo(long long int n) {
   if (n == 1 || n == 0) {
     return n;
   } else {
@@ -8,12 +8,12 @@ int fibonacciRecursivo(int n) {
   }
 }
 
-int fibonacciIterativo(int n) {
-  int fib[n];
+long long int fibonacciIterativo(long long int n) {
+  long long int fib[n];
     fib[0] = 0;
     fib[1] = 1;
 
-    for(int i = 2; i <= n; i++){
+    for(long long int i = 2; i <= n; i++){
       fib[i] = fib[i-1] + fib[i-2];
     }
   return fib[n];

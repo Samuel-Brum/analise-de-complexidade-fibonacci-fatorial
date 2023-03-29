@@ -1,10 +1,8 @@
 #ifndef FAT_H
 #define FAT_H
 
-#include <iostream>
-
-int fatorialRecursivo(int n);
-int fatorialIterativo(int n);
+long long int fatorialRecursivo(long long int n);
+long long int fatorialIterativo(long long int n);
 
 
 #endif

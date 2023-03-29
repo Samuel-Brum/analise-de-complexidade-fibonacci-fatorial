@@ -1,6 +1,6 @@
 #include "fat.h"
 
-int fatorialRecursivo(int n) {
+long long int fatorialRecursivo(long long int n) {
   if (n > 1) {
     return n * fatorialRecursivo(n-1);
   } else {
@@ -8,9 +8,9 @@ int fatorialRecursivo(int n) {
   }
 }
 
-int fatorialIterativo(int n) {
-  int fat;
-  for (int i = n; n > 1; i--){
+long long int fatorialIterativo(long long int n) {
+  long long int fat = 1;
+  for (long long int i = 1; i <= n; i++){
     fat *= i;
   }
   return fat;
