@@ -8,7 +8,8 @@ OBJECTS := $(patsubst %.cpp, %.o, $(SOURCES))
 PROJECT_NAME := teste
 EXE := bin/$(PROJECT_NAME)
 
-N := 15
+FIB := 5000000 # MAX 43/5000000
+FAT := 30 # MAX 65
 
 $(EXE): $(OBJECTS)
 	$(CXX) -o bin/$(PROJECT_NAME) $(OBJECTS)
@@ -17,17 +18,18 @@ $(EXE): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 run: $(EXE)
-	$(EXE) -fib -r -$(N)
-	$(EXE) -fib -i -$(N)
-	$(EXE) -fat -r -$(N)
-	$(EXE) -fat -i -$(N)
+	$(EXE) fib r 5
+	$(EXE) fib i 5
+	$(EXE) fat r 5
+	$(EXE) fat i 5
 
-time: $(EXE)
-	sudo perf stat $(EXE) -fib -r -$(N)
-	sudo perf stat $(EXE)	-fib -i -$(N)
-	sudo perf stat $(EXE)	-fat -r -$(N)
-	sudo perf stat $(EXE) -fat -i -$(N)
-# TODO: achar jeito de fazer loop em makefile
+timeFib: $(EXE)
+#	sudo perf stat $(EXE) fib r $(FIB)
+	sudo perf stat $(EXE)	fib i $(FIB)
+
+timeFat: $(EXE)
+	sudo perf stat $(EXE)	fat r $(FAT)
+	sudo perf stat $(EXE) fat i $(FAT)
 
 clean:
 	rm -f bin/$(PROJECT_NAME) scr/*.o

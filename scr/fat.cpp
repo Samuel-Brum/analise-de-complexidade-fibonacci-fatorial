@@ -1,6 +1,7 @@
+#include <iostream>
 #include "fat.h"
 
-long long int fatorialRecursivo(long long int n) {
+unsigned long long int fatorialRecursivo(unsigned long long int n) {
   if (n > 1) {
     return n * fatorialRecursivo(n-1);
   } else {
@@ -8,9 +9,10 @@ long long int fatorialRecursivo(long long int n) {
   }
 }
 
-long long int fatorialIterativo(long long int n) {
-  long long int fat = 1;
-  for (long long int i = 1; i <= n; i++){
+unsigned long long int fatorialIterativo(unsigned long long int n) {
+  std::cout << "entrou" << std::endl;
+  unsigned long long int fat = 1;
+  for (unsigned long long int i = 1; i <= n; i++){
     fat *= i;
   }
   return fat;

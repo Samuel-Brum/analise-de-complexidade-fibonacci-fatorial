@@ -1,8 +1,8 @@
 #ifndef FAT_H
 #define FAT_H
 
-long long int fatorialRecursivo(long long int n);
-long long int fatorialIterativo(long long int n);
+unsigned long long int fatorialRecursivo(unsigned long long int n);
+unsigned long long int fatorialIterativo(unsigned long long int n);
 
 
 #endif
